@@ -69,28 +69,86 @@ Para aumentar la flexibilidad del diseño y optimizar la manipulación del DOM, 
 </nav>
 ```
 
-## Aplicación Práctica en el Diseño Web con SCSS
+## Ejemplo Práctico: Arquitectura Avanzada en CSS y HTML
 
-La implementación de SCSS proporciona un enfoque cohesivo para la organización del código CSS y HTML. Por ejemplo, en la construcción de una barra de navegación posicionada en top permanentemente, se podría utilizar la siguiente estructura para aplicar <span style="opacity: .5;">*position sticky*</span> en el contendor, <span style="opacity: .5;">*position relative*</span> en la nav, y de manera efectiva permitiendo así poder manipular "subunit's" con <span style="opacity: .5;">*position absolute*</span>:
+### HTML
 
 ```html
-<nav id="superfluous-source-nav" style="position: sticky;">
-    <nav id="source-nav" style="position: relative;">
-        <ul class="superfluous-component left">
-            <div class="subunit-left one"></div>
-            <div class="subunit-left two"></div>
-        </ul>
-        <ul class="superfluous-component center" style="position: absolute;">
-            <div class="subunit-center one"></div>
-            <div class="subunit-center two"></div>
-            <div class="subunit-center three"></div>
-        </ul>
-        <ul class="superfluous-component right">
-            <div class="subunit-right one"></div>
-        </ul>
-    </nav>
+<nav id="superfluous-source-nav">
+  <nav id="source-nav">
+    <ul class="superfluous-component left">
+      <li class="subunit-left one">
+        <a href="#">SCSS</a>
+      </li>
+    </ul>
+    <ul class="superfluous-component center">
+      <li class="subunit-center one">
+        <a href="#">Releases</a>
+      </li>
+      <li class="subunit-center two">
+        <a href="#">Documentation</a>
+      </li>
+      <li class="subunit-center three">
+        <a href="#">Syntaxis</a>
+      </li>
+    </ul>
+    <ul class="superfluous-component right">
+      <li class="subunit-right one">
+        <a href="#">FAQ</a>
+      </li>
+    </ul>
+  </nav>
 </nav>
 ```
+
+### CSS
+
+```css
+/* reset CSS */
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  min-height: 300vh;
+}
+
+/* start SCSS */
+#superfluous-source-nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  border: 2px solid;
+}
+
+#source-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+```
+
+---
+En este ejemplo práctico, se presenta una metodología avanzada para la creación de una barra de navegación fija utilizando position: sticky. Esta técnica asegura que la barra de navegación (nav) se mantenga adherida al borde superior de la ventana durante el desplazamiento (scroll) del documento, mejorando significativamente la experiencia del usuario.
+
+La estructura jerárquica se define de manera precisa, donde la nav principal (#superfluous-source-nav) actúa como contenedor superior y aplica position: sticky para fijarse en el viewport. El contenedor inmediato (#source-nav), que es hijo del abuelo #superfluous-source-nav, se sitúa relativamente con position: relative, permitiendo un control absoluto sobre los elementos descendientes (.subunit), que son los nietos. Estos subcomponentes (.subunit-left, .subunit-center, .subunit-right) utilizan position: absolute para su posicionamiento exacto dentro del contenedor relativo, asegurando una disposición precisa y dinámica en el layout.
+
+Este enfoque modular y altamente estructurado no solo facilita el mantenimiento del código, sino que también optimiza el rendimiento de renderizado en navegadores modernos.
 
 ### Consideraciones de Performance y Mantenimiento
 
@@ -101,3 +159,6 @@ El uso de SCSS no solo mejora la legibilidad del código, sino que también opti
 La introducción de la estructura SCSS —combinando *Source*, *Components*, *Subunit* y *Superfluous*— representa un avance significativo en la organización del código CSS y HTML. Esta metodología no solo mejora la legibilidad y mantenimiento, sino que también facilita la colaboración entre desarrolladores y diseñadores, asegurando una implementación más eficiente y efectiva en el desarrollo web. A medida que la complejidad de los proyectos web sigue creciendo, adoptar prácticas semánticas y organizadas como SCSS se convierte en una necesidad ineludible para el éxito y la sostenibilidad a largo plazo del software.
 
 <p>Autorizado y Curado por <a href="https://github.com/andreesceo">@andresceo 🚀</a>, Especialista en Arquitectura Web y Optimización Digital ©</p>
+
+
+

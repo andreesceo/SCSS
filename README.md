@@ -75,7 +75,7 @@ La implementación de SCSS proporciona un enfoque cohesivo para la organización
 
 ```html
 <nav id="superfluous-source-nav" style="position: sticky;">
-    <div id="source-nav" style="position: relative;">
+    <nav id="source-nav" style="position: relative;">
         <ul class="superfluous-component left">
             <div class="subunit-left one"></div>
             <div class="subunit-left two"></div>
@@ -88,7 +88,7 @@ La implementación de SCSS proporciona un enfoque cohesivo para la organización
         <ul class="superfluous-component right">
             <div class="subunit-right one"></div>
         </ul>
-    </div>
+    </nav>
 </nav>
 ```
 

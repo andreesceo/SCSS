@@ -100,4 +100,4 @@ El uso de SCSS no solo mejora la legibilidad del código, sino que también opti
 
 La introducción de la estructura SCSS —combinando *Source*, *Components*, *Subunit* y *Superfluous*— representa un avance significativo en la organización del código CSS y HTML. Esta metodología no solo mejora la legibilidad y mantenimiento, sino que también facilita la colaboración entre desarrolladores y diseñadores, asegurando una implementación más eficiente y efectiva en el desarrollo web. A medida que la complejidad de los proyectos web sigue creciendo, adoptar prácticas semánticas y organizadas como SCSS se convierte en una necesidad ineludible para el éxito y la sostenibilidad a largo plazo del software.
 
-<p style="text-align: center;">Autorizado y Curado por <a href="https://github.com/andreesceo">@andresceo 🚀</a>, Especialista en Arquitectura Web y Optimización Digital ©</p>
+<p>Autorizado y Curado por <a href="https://github.com/andreesceo">@andresceo 🚀</a>, Especialista en Arquitectura Web y Optimización Digital ©</p>
